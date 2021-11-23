@@ -1,0 +1,276 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* @import url("/t/css/font_nettowebpro.css") all; */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300') all;
+
+
+	body{
+		font-family:"Open Sans","Myriad Pro",Arial, Helvetica, sans-serif;
+		font-size:12pt;
+		color:#222;
+		background:#fefefe;
+	}
+	a {
+		text-decoration:none;
+		color:#227;
+	}
+	a:hover {
+		text-decoration:underline;
+		color:#005;
+	}
+
+	div.column {
+		/*** background:#fff; ***/
+	}
+
+	#LEDLogo {
+		float: left;
+	}
+
+	#LEDLogo:hover {
+		rotation-point:50% 50%;
+		rotation:180deg;
+	}
+
+	.easeinout {
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.inset {
+		box-shadow: inset 4px 4px 4px 0px #999999;
+		-webkit-box-shadow: inset 4px 4px 4px 0px #999999;
+		-moz-box-shadow: inset 4px 4px 4px 0px #999999;
+		-o-box-shadow: inset 4px 4px 4px 0px #999999;
+	}
+
+
+	.rund {
+		border-top-left-radius: 0.4em;
+		border-top-right-radius: 0.4em;
+		border-bottom-left-radius: 0.4em;
+		border-bottom-right-radius: 0.4em;
+
+		-moz-border-radius-topleft: 0.4em;
+		-moz-border-radius-topright: 0.4em;
+		-moz-border-radius-bottomleft: 0.4em;
+		-moz-border-radius-bottomright: 0.4em;
+
+		-khtml-border-radius-topleft: 0.4em;
+		-khtml-border-radius-topright: 0.4em;
+		-khtml-border-radius-bottomleft: 0.4em;
+		-khtml-border-radius-bottomright: 0.4em;
+
+		-webkit-border-top-left-radius: 0.4em;
+		-webkit-border-top-right-radius: 0.4em;
+		-webkit-border-bottom-left-radius: 0.4em;
+		-webkit-border-bottom-right-radius: 0.4em;
+	}
+
+	.ueberschrift {
+		font-size:200%;
+		color:#888;
+		padding-bottom:4px;
+	}
+
+	.fliesstext {
+
+	}
+
+	.grossueberschrift {
+		font-size:240%;
+		color:#ccc;
+		padding-bottom:4px;
+
+	}
+	.bereichsueberschrift {
+		margin-top:2px;
+		margin-bottom:4px;
+		font-size:140%;
+		color:#bbb;
+	}
+	.zwischenueberschrift {
+		padding-top:8px;
+		font-size:120%;
+		color:#666;
+	}
+
+	.kapitel {
+		padding:8px 0 12px 24px;
+		width:90%;
+	}
+
+	.kasten {
+		border:1px solid #c0c0c0;
+		padding:8px 0 12px 24px;
+		width:95%;
+    }
+
+	.iblock {
+		display:inline-block;
+		width:12em;
+		padding:8px;
+		margin:2px;
+	}
+	.bla {
+		font-size: 200%;
+		font-family:"Open Sans","Myriad Pro",Arial, Helvetica, sans-serif;
+	}
+
+	.graubg {
+		background:#f0f0f0;
+	}
+	.illustration {
+		border:0;
+		padding: 0 0 12px 12px;
+		float:right;
+	}
+
+	.clickable {
+		cursor:pointer;
+	}
+
+	.vollbild {
+		width:537px;
+/*
+		height:354px;
+*/
+	}
+
+	.clearboth {
+		clear:both;
+		height:12px;
+	}
+
+
+	div#header-contain{
+		display:block;
+		padding-bottom:10px;
+	}
+
+	div#content-contain{
+	}
+
+	div#col-1{
+		height:420px;
+	}
+
+	div#col-2{
+	}
+
+	div.kopfcontent {
+		padding:8px 0 8px 12px;
+		font-size: 400%;
+		border-bottom:1px solid #e0e0e0;
+		text-align: center;
+	}
+	img.sitelogo {
+		width:242px;
+		height:75px;
+	}
+
+
+	div.hauptmenue {
+		font-size:120%;
+	}
+	ul.menuboth {
+		list-style-type:none;
+		padding:0;
+		margin:0;
+	}
+
+	li.menuitem {
+		border:1px solid #fcfcfc;
+		padding:6px;
+		background:#fff;
+	}
+	li.menuitem:hover {
+		border:1px solid #292;
+		cursor:pointer;
+		text-decoration:underline;
+		color:#c00;
+		background:#fff;
+	}
+	li.submenu {
+		padding-left:12px;
+	}
+	ul.vmenu {
+	}
+	ul.hmenu li {
+		display:inline;
+		padding:8px;
+	}
+	div.hauptcontent {
+	/*	border: 1px solid #eee; */
+	/*	padding:18px;	*/
+	}
+
+
+
+
+
+	div.fusscontent {
+		border-top:1px solid #ccc;
+		background:#fcfcfc;
+		padding:12px;
+		text-align:center;
+		font-size:90%;
+	}
+	div.fusscontent ul {
+		display:inline;
+	}
+
+	div#footer-contain{
+		padding-bottom:4px !important;
+	}
+
+	div#footer-contain div{
+	}
+
+
+
+/* Tablet - Portait View - 768px wide */
+
+    @media only screen and (max-width: 959px) and (min-width: 768px) {
+
+	div.head-links{
+		text-align:center;
+		line-height:50px;
+		vertical-align:middle;
+		}
+
+		div.head-links a{
+			padding:10px;
+			margin:0px 10px;
+		}
+
+		div.head-links h2{
+			padding:0px 0px;
+			margin:0px 0px;
+		}
+
+	}
+
+
+
+/* Mobile - Landscape View - 420px wide */
+
+    @media only screen and (max-width: 767px) and (min-width: 480px) {
+
+	/* Use this section for the iPhone - Lanscape styles */
+
+	}
+
+
+
+/* Mobile - Portrait View - 300px wide */
+
+    @media only screen and (max-width: 479px){
+
+	/* Use this section for the iPhone - Portrait styles */
+
+	}

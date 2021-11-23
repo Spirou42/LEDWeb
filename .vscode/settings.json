@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/spirou/.platformio/penv/bin:/Users/spirou/.platformio/penv:/Users/spirou/esp/xtensa-esp32-elf/bin:/Users/spirou/Library/Python/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/spirou/bin:/opt/local/bin:/opt/local/sbin",
+        "PLATFORMIO_CALLER": "vscode"
+    },
+    "files.associations": {
+        "queue": "cpp",
+        "map": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.dimInactiveRegions": false
+}

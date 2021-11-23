@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* CSS Document */
+ 
+ 
+
+/* Use this section for the 960 styles */
+ 
+
+ 
+/* Tablet - Portait View - 768px wide */
+
+    @media only screen and (max-width: 959px) and (min-width: 768px) {
+		
+	/* Use this section for the 768 styles */
+	
+	}
+ 
+ 
+ 
+/* Mobile - Landscape View - 420px wide */
+
+    @media only screen and (max-width: 767px) and (min-width: 480px) {	
+		
+	/* Use this section for the iPhone - Lanscape styles */
+	
+	}
+ 
+ 
+ 
+/* Mobile - Portrait View - 300px wide */
+
+    @media only screen and (max-width: 479px){	
+		
+	/* Use this section for the iPhone - Portrait styles */
+	
+	}
+		

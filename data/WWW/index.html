@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <title>ESP32 Web Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+  <script type="text/javascript" src="/static/jquery.js"></script>
+  <script type="text/javascript" src="/static/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/jscolor.js"></script>
+  <script type="text/javascript" src="/static/jq.json.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/jquery-ui.css">
+  <!-- script type="text/javascript" src="/static/jq.canvasjs.js"></script -->
+
+<!--
+  <script type="text/javascript" src="/static/WSClient.js"></script>
+  <script type="text/javascript" src="/static/EventClient.js"></script>
+  <script type="text/javascript" src="/static/site.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/static/newStyles.css">
+-->
+
+  <script type="text/javascript" src="http://maxiapfel.local/static/WSClient.js"></script>
+  <script type="text/javascript" src="http://maxiapfel.local/static/EventClient.js"></script>
+  <script type="text/javascript" src="http://maxiapfel.local/static/site.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://maxiapfel.local/static/newStyles.css">
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  <header>
+    <img id="LEDLogo" name="LEDLogo" alt="[ESP LED]" width="75" height="75" border="0" src="/static/LEDLogo.png" align="left">
+    <a href="http://%HOSTNAME%.local" title="%HOSTNAME% Sevice">%HOSTNAME% Service</a>
+  </header>
+  <nav>
+    <ul class="vmenu menuboth">
+      <li class="rund clickable menuitem"><a href="index.html">LED Service</a></li>
+      <li class="rund clickable menuitem"><a href="index.html">Data Service</a></li>
+    </ul>
+  </nav>
+  <main>
+    <!--input name="nextColor" class="jscolor {onFineChange:'updateColor(this)'} kasten rund iblock bla" value="%CURRENTCOLOR%"-->
+
+    <!-- System parameters -->
+    <form>
+      <fieldset id="ParameterSet">
+        <legend>Parameters</legend>
+        <div class="ui-controlgroup" id="ParametersGroup">
+        </div>
+      </fieldset>
+      <br>
+      <fieldset if="PaletteSet">
+        <legend>Palettes</legend>
+        <div class="ui-controlgroup" id="PalettesGroup" >
+          <select name="palettes" id="SystemPalettes"></select>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset id="EffectSet">
+        <legend>Effects</legend>
+        <div class="ui-controlgroup" id="EffectsGroup">
+          <select name="effects" id="SystemEffects"></select>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset id="EffectParameterSet">
+        <legend>Effect Parameters</legend>
+        <div class="ui-controlgroup" id="EffectParameterGroup">
+          
+        </div>
+      </fieldset>
+    </form>
+  </main>
+  <dada id="dbg">
+  </dada>
+  <footer>
+    The Footer
+  </footer>
+
+  <script>
+    var wSocket;
+    var eventSource;
+    setupWSClient();
+    setupEventSource();
+  </script>
+</body>
+
+</html>
