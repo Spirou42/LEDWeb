@@ -19,7 +19,7 @@
 #define ROTATED false
 #elif USE_CHRISTMASBALL
 #warning CHRISTMASBALL
-#define FLIPPED true
+#define FLIPPED false
 #define SERPENTIME true
 #define ROTATED true
 #endif

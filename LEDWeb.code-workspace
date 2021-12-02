@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "../../../Projekte/FastLEDAddOns"
+		},
+		{
+			"path": "../../../Projekte/metaPixel/Software/metaPixel"
 		}
 	],
 	"settings": {

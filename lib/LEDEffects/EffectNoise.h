@@ -7,7 +7,7 @@ EffectNoise.h
 class EffectNoise: public Effect{
 public:
   EffectNoise():Effect("Clouds"){}
-  virtual uint16_t frameRate(){return 1000/10;}
+  virtual uint16_t frameRate(){return 25;}
 
   virtual void startEffect();
   // virtual size_t numberOfParameters(){
