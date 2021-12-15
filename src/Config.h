@@ -10,7 +10,7 @@
  */
 
 #pragma once
-#define HOSTNAME "esp32RGB"
+#define HOSTNAME "esp32RGBL"
 #define STATUS_FREQUENCE 1.0
 
 /** Definition for the DHT Sensor */

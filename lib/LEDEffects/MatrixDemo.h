@@ -15,8 +15,8 @@
 #include <avrQueue.h>
 
 #define USE_BACKBUFFER 1
-#define USE_CHRISTMASBALL 1
-#define USE_CYLINDERLAMP 0
+#define USE_CHRISTMASBALL 0
+#define USE_CYLINDERLAMP 1
 
 #define DEBUG_EFFECTS 0
 
