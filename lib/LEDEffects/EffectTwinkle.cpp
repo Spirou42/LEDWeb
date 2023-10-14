@@ -86,7 +86,7 @@
 //#define TWINKLE_DENSITY 5
 
 // How often to change color palettes.
-#define SECONDS_PER_PALETTE  30
+#define SECONDS_PER_PALETTE  10
 // Also: toward the bottom of the file is an array 
 // called "ActivePaletteList" which controls which color
 // palettes are used; you can add or remove color palettes
@@ -382,14 +382,14 @@ const TProgmemRGBPalette16 Ice_p FL_PROGMEM =
 // palettes are used, and in what order.
 const TProgmemRGBPalette16* ActivePaletteList[] = {
   &RetroC9_p,
+  &Snow_p,
+  &Holly_p,
   &BlueWhite_p,
   &RainbowColors_p,
   &FairyLight_p,
   &RedGreenWhite_p,
   &PartyColors_p,
   &RedWhite_p,
-  &Snow_p,
-  &Holly_p,
   &Ice_p  
 };
 

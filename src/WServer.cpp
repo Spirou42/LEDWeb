@@ -161,7 +161,7 @@ void onWebSocketEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, Aw
     //client connected
     printf("ws[%s][%u] connect\n", server->url(), client->id());
     client->printf("Hello Client %u :)", client->id());
-    client->ping();
+    //client->ping();
   } else if(type == WS_EVT_DISCONNECT){
     //client disconnected
     printf("ws[%s][%u] disconnect: %u\n", server->url(), client->id(), client->id());
