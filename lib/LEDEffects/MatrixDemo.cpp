@@ -154,7 +154,7 @@ EffectList initializeSystemEffects() {
   tmp.push_back(&rainEffect);
   tmp.push_back(&lineBounceEffect);
   tmp.push_back(&pacificaEffect);
-  // tmp.push_back(&lavaEffect);
+  tmp.push_back(&lavaEffect);
   return tmp;
 }
 

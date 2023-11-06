@@ -171,7 +171,7 @@ void setup()
     startServices();
   }else{
     Serial << "Connection to "<<WiFi.SSID()<<" failed"<<endl;
-    startBLEServer();
+    //startBLEServer();
   }
 
 }
@@ -202,9 +202,9 @@ void loop()
   //     FastLED.show();
   //   }
   // }
-  // if(WiFi.isConnected()){
-  //   EVERY_N_SECONDS(80) { FastLEDAddOns::currentRunningEffect++; }
-  // }
+  if(WiFi.isConnected()){
+    EVERY_N_SECONDS(120) { FastLEDAddOns::currentRunningEffect++; }
+  }
 
   EVERY_N_MINUTES(10) {
     FastLEDAddOns::currentRunningEffect++;
