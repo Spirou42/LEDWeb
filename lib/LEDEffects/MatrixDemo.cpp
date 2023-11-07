@@ -145,6 +145,7 @@ EffectLava lavaEffect=EffectLava();
 EffectRain rainEffect=EffectRain();
 EffectTwinkle twinkleEffect = EffectTwinkle();
 EffectPacifica pacificaEffect = EffectPacifica();
+EffectWhitney whitneyEffect = EffectWhitney();
 
 EffectList initializeSystemEffects() {
   EffectList tmp;
@@ -155,6 +156,7 @@ EffectList initializeSystemEffects() {
   tmp.push_back(&lineBounceEffect);
   tmp.push_back(&pacificaEffect);
   tmp.push_back(&lavaEffect);
+  tmp.push_back(&whitneyEffect);
   return tmp;
 }
 
@@ -209,3 +211,38 @@ ValueWrapper *wrapperForUIName(String uiName, FastLEDAddOns::ParameterList list)
   }
   return NULL;
 }
+
+CHSV rgb2hsv(const CRGB& rgb)
+{
+	CHSV result = CHSV();
+	double H,S,V;
+	double min,max,delta;
+	min = rgb.r<rgb.g?rgb.r:rgb.g;
+	min = min < rgb.b?min:rgb.b;
+
+	max = rgb.r>rgb.g?rgb.r:rgb.g;
+	max = max  >rgb.b?max  :rgb.b;
+	V = max;
+	delta = max-min;
+	if(max>0){
+		S = (delta/max)*255;
+	}else{
+		S=0;
+		H=0;
+		V=0;
+	}
+	if(rgb.r>=max){
+		H = (rgb.g - rgb.b)/delta;
+	}else if(rgb.g>=max){
+		H = 2.0+(rgb.b-rgb.r)/delta;
+		}else
+			H = 4.0+(rgb.r - rgb.g)/delta;
+
+		H *=43.0;
+//	Serial <<"H:"<<H<<" S:"<<S<<" V:"<<V<<endl;
+		result.h = (uint8_t)H;
+		result.s = (uint8_t)S;
+		result.v = (uint8_t)V;
+//		Serial <<"rH:"<<result.h<<" rS:"<<result.s<<" rV:"<<result.v<<endl;
+		return result;
+	}

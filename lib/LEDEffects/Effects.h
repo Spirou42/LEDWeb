@@ -17,4 +17,5 @@
 #include <EffectTorch.h>
 #include <EffectTwinkle.h>
 #include <EffectPacifica.h>
+#include <EffectWhitney.h>
 

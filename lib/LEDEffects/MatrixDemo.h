@@ -12,6 +12,7 @@
 #pragma once
 
 #include <FastLEDAddOns.h>
+#include <elapsedMillis.h>
 #include <avrQueue.h>
 
 #define USE_BACKBUFFER 1
@@ -86,3 +87,4 @@ void startupEffects(avrQueue *, postFrame);
 void startupBackbuffer(avrQueue *queue);
 void adjustFrameRate(avrQueue *queue, int16_t newFrameRate);
 ValueWrapper *wrapperForUIName(String uiName, FastLEDAddOns::ParameterList list);
+CHSV rgb2hsv(const CRGB& rgb);
