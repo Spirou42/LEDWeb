@@ -1,5 +1,5 @@
 /**
- * @file MatrixDemo.cpp
+ * @file EffectBase.cpp
  * @author Carsten Müller (carstenm@mac.com)
  * @brief
  * @version 0.1
@@ -9,7 +9,7 @@
  *
  */
 
-#include <MatrixDemo.h>
+#include <EffectBase.h>
 #include <Effects.h>
 
 #if USE_CYLINDERLAMP

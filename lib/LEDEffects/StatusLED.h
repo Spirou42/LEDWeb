@@ -12,7 +12,7 @@
 #include <FastLED.h>
 #include <Ticker.h>
 #include <FastLEDAddOns.h>
-#include <MatrixDemo.h>
+#include <EffectBase.h>
 
 class StatusLED;
 extern void blinker(StatusLED* led);

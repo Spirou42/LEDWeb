@@ -11,5 +11,5 @@
 
 #pragma once
 
-#include <MatrixDemo.h>
+#include <EffectBase.h>
 #include <StatusLED.h>

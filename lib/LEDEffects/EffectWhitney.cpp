@@ -12,7 +12,7 @@ Q4Z5U180R60V0
 
 
 */
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 #include "EffectWhitney.h"
 
 
@@ -24,8 +24,8 @@ void EffectWhitney::startEffect()
   globalHueStep = 2;
   _millisSinceStart = 0;
   _frameCounter = 0;
-  _lumenScale = 100;
-  _cycleLength = 60 * 3;
+  _lumenScale = 20;
+  _cycleLength = 60 * 10;
   if (_parameters.empty()) {
     ValueWrapper *k = new ValueWrapper(&_lumenScale, 0, 400, "Luma Scale", "LSC");
     addParameter(k);
@@ -54,7 +54,7 @@ void EffectWhitney::frame(unsigned long now)
   //  minR = minR>r?r:minR;
     float a;
     a = timer * r;
-    float lScale = (_lumenScale/50.0)-1.0;
+    float lScale = (_lumenScale/10.0)-1.0;
     float hSpeed =((200-globalHueStep) -100);
     float lum = (sin(a)+lScale) / (1.0+lScale) ;
     maxL = maxL<lum?lum:maxL;

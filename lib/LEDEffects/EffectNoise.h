@@ -2,7 +2,7 @@
 EffectNoise.h
 **/
 
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 #define MAX_DIMENSION ((MATRIX_WIDTH>MATRIX_HEIGHT) ? MATRIX_WIDTH : MATRIX_HEIGHT)
 class EffectNoise: public Effect{
 public:

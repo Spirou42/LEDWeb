@@ -1,13 +1,13 @@
 /**
 EffectTorch.h
 */
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 
 #define numLeds NUM_LEDS
 #define ledsPerLevel MATRIX_WIDTH
 #define levels MATRIX_HEIGHT
-#define USE_RED_THEME 
-//#define USE_BLUE_THEME 
+#define USE_RED_THEME 1
+//#define USE_BLUE_THEME 1
 class EffectTorch: public Effect {
 public:
   EffectTorch():Effect("Torch"){}

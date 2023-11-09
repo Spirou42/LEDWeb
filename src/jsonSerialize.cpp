@@ -11,7 +11,7 @@
 
 #include <jsonSerialize.h>
 #include <Effect.hpp>
-#include <MatrixDemo.h>
+#include <EffectBase.h>
 
 void jsonFromEffectList(JsonDocument* doc,  EffectList *list, EffectList::iterator *currentEffect)
 {

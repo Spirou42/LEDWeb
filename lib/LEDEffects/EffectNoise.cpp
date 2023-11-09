@@ -2,7 +2,7 @@
 */
 
 #include "EffectNoise.h"
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 
 void EffectNoise::startEffect(){
   Effect::startEffect();

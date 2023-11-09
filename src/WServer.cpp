@@ -20,7 +20,7 @@
 #include "StatusLED.h"
 #include <ArduinoJson.h>
 #include "jsonSerialize.h"
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 #include "WSEvents.h"
 
 /** preliminatry message Type from the client.*/

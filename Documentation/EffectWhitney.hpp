@@ -4,7 +4,7 @@
 
 #ifndef __EFFECT_WHITNEY_H__
 #define __EFFECT_WHITNEY_H__
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 
 class EffectWhitney:public Effect
 {

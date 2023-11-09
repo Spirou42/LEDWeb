@@ -1,7 +1,7 @@
 /**
- * @file MatrixDemo.h
+ * @file EffectBase.h
  * @author Carsten Müller (carstenm@mac.com)
- * @brief Simple Maxtrix Demonsatration effects
+ * @brief Basic structures for the Effects
  * @version 0.1
  * @date 2021-09-29
  * 

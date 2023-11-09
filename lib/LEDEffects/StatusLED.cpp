@@ -7,7 +7,7 @@
 #define FASTLED_ALL_PINS_HARDWARE_SPI
 
 #include "StatusLED.h"
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 
 // #define RED_CHANNEL     0
 // #define GREEN_CHANNEL   1

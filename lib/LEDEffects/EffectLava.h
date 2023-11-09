@@ -1,7 +1,7 @@
 #ifndef __EFFECT_LAVA_H__
 #define __EFFECT_LAVA_H__
 
-#include "MatrixDemo.h"
+#include "EffectBase.h"
 typedef struct _lavaBlob{
 
 }lavaBlob;
