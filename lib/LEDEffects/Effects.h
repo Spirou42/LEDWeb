@@ -11,7 +11,7 @@
 
 #pragma once
 #include <EffectLava.h>
-#include <EffectLineBounce.h>
+#include <EffectColorBands.h>
 #include <EffectNoise.h>
 #include <EffectRain.h>
 #include <EffectTorch.h>

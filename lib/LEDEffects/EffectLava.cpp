@@ -56,7 +56,7 @@ void EffectLava::applyHeat(){
 void EffectLava::coolDown(){
   for(uint8_t y=0;y<MATRIX_HEIGHT;y++){
     for(uint8_t x=0;x<MATRIX_WIDTH;x++){
-      uint8_t heatLoss = (((y+1)/3) * tempMap[x][y])/512;
+      uint8_t heatLoss = (((y+1)/3) * tempMap[x][y])/128;
       tempMap[x][y] = sub(tempMap[x][y], heatLoss);
     }
   }

@@ -32,6 +32,9 @@ public:
     if(_lastPalette != systemPalettes.end()){
       currentSystemPalette = _lastPalette;
     }
+    if(_parameters.empty()){
+      initializePublicParameter();
+    }
   };  ///< book keeping on startup
 
   /**
@@ -42,7 +45,7 @@ public:
       _lastPalette = currentSystemPalette;
     }
   };
-
+  virtual void initializePublicParameter(){}
   /** the framerate for the effect */
   virtual uint16_t frameRate(){return 1000/60;}
 	/**

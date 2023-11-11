@@ -1,7 +1,7 @@
 /**
  * @file EffectBase.cpp
  * @author Carsten Müller (carstenm@mac.com)
- * @brief
+ * @brief common and base structures for running effects. Defines global parameters, paletes and mapping for the LED matrix as defined in LasLEDAddOns.
  * @version 0.1
  * @date 2021-09-29
  *
@@ -138,7 +138,7 @@ PaletteList::iterator currentSystemPalette = systemPalettes.begin();
 //
 // The Effects 
 //
-EffectLineBounce lineBounceEffect = EffectLineBounce();
+EffectColorBands colorBandsEffect = EffectColorBands();
 EffectTorch torchEffect = EffectTorch();
 EffectNoise noiseEffect=EffectNoise();
 EffectLava lavaEffect=EffectLava();
@@ -149,11 +149,12 @@ EffectWhitney whitneyEffect = EffectWhitney();
 
 EffectList initializeSystemEffects() {
   EffectList tmp;
+
   tmp.push_back(&twinkleEffect);
   tmp.push_back(&noiseEffect);
   tmp.push_back(&torchEffect);
   tmp.push_back(&rainEffect);
-  tmp.push_back(&lineBounceEffect);
+  tmp.push_back(&colorBandsEffect);
   tmp.push_back(&pacificaEffect);
   tmp.push_back(&lavaEffect);
   tmp.push_back(&whitneyEffect);

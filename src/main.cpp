@@ -9,7 +9,6 @@
 #include "WServer.h"
 #include "BLEServer.h"
 #include "Config.h"
-#include "DHT22Reader.h"
 #include "FastLEDAddOns.h"
 #include "avrQueue.h"
 

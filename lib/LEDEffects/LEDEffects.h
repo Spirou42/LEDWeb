@@ -12,4 +12,5 @@
 #pragma once
 
 #include <EffectBase.h>
+#include <Effects.h>
 #include <StatusLED.h>
