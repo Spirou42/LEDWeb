@@ -18,4 +18,5 @@
 #include <EffectTwinkle.h>
 #include <EffectPacifica.h>
 #include <EffectWhitney.h>
+#include <EffectMetaBall.h>
 

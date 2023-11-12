@@ -1,6 +1,7 @@
 /**
 EffectNoise.h
 **/
+#pragma once
 
 #include "EffectBase.h"
 #define MAX_DIMENSION ((MATRIX_WIDTH>MATRIX_HEIGHT) ? MATRIX_WIDTH : MATRIX_HEIGHT)
@@ -13,8 +14,8 @@ public:
   // virtual size_t numberOfParameters(){
   //   return ( _parameters.end() - _parameters.begin());
   // }
-   virtual String parameterNameAt(size_t idx);
-   virtual ValueWrapper* parameterAt(size_t idx);
+  virtual String parameterNameAt(size_t idx);
+  virtual ValueWrapper* parameterAt(size_t idx);
 
   virtual void frame(unsigned long now);
 protected:

@@ -146,6 +146,7 @@ EffectRain rainEffect=EffectRain();
 EffectTwinkle twinkleEffect = EffectTwinkle();
 EffectPacifica pacificaEffect = EffectPacifica();
 EffectWhitney whitneyEffect = EffectWhitney();
+EffectMetaBall metaBallEffect = EffectMetaBall();
 
 EffectList initializeSystemEffects() {
   EffectList tmp;
@@ -158,6 +159,7 @@ EffectList initializeSystemEffects() {
   tmp.push_back(&pacificaEffect);
   tmp.push_back(&lavaEffect);
   tmp.push_back(&whitneyEffect);
+  tmp.push_back(&metaBallEffect);
   return tmp;
 }
 
