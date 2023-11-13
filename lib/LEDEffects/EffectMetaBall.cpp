@@ -3,14 +3,12 @@ EffectMetaBall.cpp
 */
 
 #include <EffectMetaBall.h>
+
+#define NUM_OF_BALLS 20
 Metaball::Metaball(float initialX, float initialY, float initialSpeedX,
                    float initialSpeedY, float initialSize, uint8_t cidx)
-    : x(initialX),
-      y(initialY),
-      speedX(initialSpeedX),
-      speedY(initialSpeedY),
-      size(initialSize),
-      colorIndex(cidx) {}
+    : x(initialX), y(initialY), speedX(initialSpeedX), speedY(initialSpeedY),
+      size(initialSize), colorIndex(cidx) {}
 
 void Metaball::update() {
   x += speedX;
@@ -26,7 +24,7 @@ void Metaball::update() {
   }
 }
 
-void Metaball::draw(XYMatrix& matrix) {
+void Metaball::draw(XYMatrix &matrix) {
   // Calculate bounding box
   int minX = max(0, static_cast<int>(x - size));
   int maxX = min(matrix.width() - 1, static_cast<int>(x + size));
@@ -45,9 +43,14 @@ void Metaball::draw(XYMatrix& matrix) {
         int brightness =
             static_cast<int>(255 * (1 - distanceSquared / radiusSquared));
         CRGB dest = matrix.getPixel(i, j);
-        CRGB source = ColorFromPalette(RainbowColors_p, (colorIndex)*255 / 5,
+        CRGB source = ColorFromPalette((*currentSystemPalette)->second.palette,
+                                       (colorIndex)*255 / NUM_OF_BALLS,
                                        brightness, LINEARBLEND);
-        nblend(dest, source, 128);
+        if (dest == CRGB::Black) {
+          dest = source;
+        } else {
+          nblend(dest, source, 128);
+        }
         matrix.setPixel(i, j, dest);
       }
     }
@@ -59,15 +62,15 @@ void EffectMetaBall::startEffect() {
   // Initialize metaballs
   metaballs.clear();
   if (metaballs.empty()) {
-    for (int i = 0; i < 5; i++) {
-      Metaball* k = new Metaball(random(MATRIX_WIDTH), random(MATRIX_HEIGHT),
-                                 random(1, 10) / 20.0, random(1, 10) / 20.0,
+    for (int i = 0; i < NUM_OF_BALLS; i++) {
+      Metaball *k = new Metaball(random(MATRIX_WIDTH), random(MATRIX_HEIGHT),
+                                 random(1, 10) / 40.0, random(1, 10) / 40.0,
                                  random(1.0, 3.0), i);
       metaballs.push_back(k);
     }
   }
 }
-uint16_t EffectMetaBall::frameRate() { return 1; }
+uint16_t EffectMetaBall::frameRate() { return 10; }
 
 void EffectMetaBall::frame(unsigned long now) {
   // Update and draw metaballs
