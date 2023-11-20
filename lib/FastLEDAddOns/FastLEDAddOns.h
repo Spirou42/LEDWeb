@@ -9,4 +9,5 @@
 #include <FLAOPalettes.h>
 #include <PrintHelper.h>
 #include <Types.hpp>
+#include <ValueWrapper.h>
 #include <XYMatrix.hpp>
