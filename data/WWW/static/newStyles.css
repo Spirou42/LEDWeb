@@ -163,8 +163,8 @@ li.menuitem {
 
 /*.ui-controlgroup-vertical {
   width: 150px;
-}*/
-
+}
+*/
 /*.ui-controlgroup-horizontal {
   
 }*/
@@ -172,7 +172,7 @@ li.menuitem {
 
 .ui-spinner-input{
   width: 40px;
-  height: 24px;
+  height: 25px;
 }
 span.ui-controlgroup-label-contents{
   /*outline: 1px dotted green;*/
@@ -182,10 +182,9 @@ span.ui-controlgroup-label-contents{
   max-width: 100px;
   min-width: 100px;
   word-break: break-all;
-
-
   overflow:hidden;
 }
+
 /*.ui-controlgroup-label-contents {
   background-color: pink;
   text-overflow: ellipsis;

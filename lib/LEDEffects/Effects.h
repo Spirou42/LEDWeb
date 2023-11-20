@@ -19,4 +19,5 @@
 #include <EffectPacifica.h>
 #include <EffectWhitney.h>
 #include <EffectMetaBall.h>
+#include <EffectDrops.h>
 

@@ -9,7 +9,7 @@ class EffectRain : public Effect {
    EffectRain():Effect("Rain"){}
    virtual void startEffect();
    virtual void stopEffect();
-   virtual uint16_t frameRate(){return 1000/30;}
+   virtual uint16_t frameRate(){return 30;}
    virtual void frame(unsigned long now);
 //   virtual size_t numberOfParameters(){return 2;}
    virtual String parameterNameAt(size_t idx);
