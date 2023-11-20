@@ -4,16 +4,17 @@
  * @brief Basic structures for the Effects
  * @version 0.1
  * @date 2021-09-29
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #pragma once
 
 #include <FastLEDAddOns.h>
-#include <elapsedMillis.h>
+#include <MetaBall.h>
 #include <avrQueue.h>
+#include <elapsedMillis.h>
 
 #define USE_BACKBUFFER 1
 #define USE_CHRISTMASBALL 0
@@ -22,23 +23,21 @@
 #define DEBUG_EFFECTS 0
 
 #if USE_CHRISTMASBALL
-  #define MATRIX_WIDTH      13
-  #define MATRIX_HEIGHT     10
+#define MATRIX_WIDTH 13
+#define MATRIX_HEIGHT 10
 #elif USE_CYLINDERLAMP
-  #define MATRIX_WIDTH      10
-  #define MATRIX_HEIGHT     20
+#define MATRIX_WIDTH 10
+#define MATRIX_HEIGHT 20
 #endif
 
-#define LED_TYPE            APA102
-#define DATA_PIN            23
-#define CLOCK_PIN           18
-#define COLOR_ORDER         BGR
-#define COLOR_CORRECTION    0xffffff
-#define LED_BRIGHTNESS      128
+#define LED_TYPE APA102
+#define DATA_PIN 23
+#define CLOCK_PIN 18
+#define COLOR_ORDER BGR
+#define COLOR_CORRECTION 0xffffff
+#define LED_BRIGHTNESS 128
 
-#define NUM_LEDS          (MATRIX_WIDTH*MATRIX_HEIGHT)
-
-
+#define NUM_LEDS (MATRIX_WIDTH * MATRIX_HEIGHT)
 
 extern XYMatrix ledMatrix;
 extern PaletteList systemPalettes;
@@ -52,13 +51,13 @@ extern FastLEDAddOns::ParameterList systemParameterList;
 extern int16_t blendFactor;
 
 extern uint8_t globalHue;
-extern int16_t globalHueStep ;
-extern int16_t globalHueFrameDelay ;
+extern int16_t globalHueStep;
+extern int16_t globalHueFrameDelay;
 
 extern int16_t ledBrightness;
-extern int16_t currentFrameRate;                   /// Framerate of the current running effect
+extern int16_t currentFrameRate; /// Framerate of the current running effect
 
-typedef void (*postFrame)(unsigned long );
+typedef void (*postFrame)(unsigned long);
 
 extern CRGB leds[];
 extern CRGB backBuffer[];
@@ -86,5 +85,6 @@ void initialiseLEDs();
 void startupEffects(avrQueue *, postFrame);
 void startupBackbuffer(avrQueue *queue);
 void adjustFrameRate(avrQueue *queue, int16_t newFrameRate);
-ValueWrapper *wrapperForUIName(String uiName, FastLEDAddOns::ParameterList list);
-CHSV rgb2hsv(const CRGB& rgb);
+ValueWrapper *wrapperForUIName(String uiName,
+                               FastLEDAddOns::ParameterList list);
+CHSV rgb2hsv(const CRGB &rgb);
