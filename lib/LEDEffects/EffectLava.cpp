@@ -9,7 +9,7 @@ void EffectLava::startEffect() {
   blendFactor = 10;
   globalHueStep = 0;
   numberOfBlobs = 15;
-  maxBlobSize = 4;
+  maxBlobSize = 2;
   if (_lastPalette == systemPalettes.end()) {
     currentSystemPalette = systemPalettes.begin() + PALETTE_TEMPERATURE;
   }
@@ -22,7 +22,7 @@ void EffectLava::startEffect() {
 
 void EffectLava::createLavaBlobs(int nob) {
   float speedX = 0;
-  float speedY = 0.05;
+  float speedY = 0.015;
 
   for (int i = 0; i < nob; i++) {
 
@@ -44,17 +44,61 @@ void EffectLava::deleteLavaBlobs() {
 }
 
 void EffectLava::frame(unsigned long now) {
-  ledMatrix.fill(ColorFromPalette((*currentSystemPalette)->second.palette, 42,
-                                  128, LINEARBLEND));
+  ledMatrix.clear();
+  // ledMatrix.fill(ColorFromPalette((*currentSystemPalette)->second.palette,
+  // 42,
+  //                                 128, LINEARBLEND));
+
+  // determine if a blob starts moving.
+  int someBlob = random(0, numberOfBlobs - 1);
+  if (!lavaBlobs[someBlob]->isMoving) {
+    int k = random(0, 1000);
+    if (k < 5) {
+      lavaBlobs[someBlob]->isMoving = true;
+    }
+  }
+
   for (auto it = lavaBlobs.begin(); it != lavaBlobs.end(); ++it) {
     (*it)->update();
     (*it)->draw(ledMatrix);
   }
   ledMatrix.flush();
 }
+
 /* LavaBlob */
+
+float LavaBlob::limitRadius() { return 2.0 * radius / 3.0; }
+
+blobState_t LavaBlob::updatePosition() {
+  blobState_t result = moving;
+  x += speedX;
+
+  if (x < 0 || x >= MATRIX_WIDTH) {
+    speedX = -speedX;
+  }
+
+  y += speedY;
+
+  if (y < limitRadius() || y >= (MATRIX_HEIGHT - limitRadius())) {
+    speedY = -speedY;
+  }
+  if (y < limitRadius()) {
+    y = limitRadius();
+    result = atBottom;
+  } else if (y >= (MATRIX_HEIGHT - limitRadius())) {
+    y = (MATRIX_HEIGHT - limitRadius());
+    result = atTop;
+  }
+  return result;
+}
 void LavaBlob::update() {
-  MetaBall::update();
+  if (this->isMoving) {
+    blobState_t bs = updatePosition();
+    if (bs == atTop) {
+      this->isMoving = false;
+    }
+  }
+
   // Serial << "Blob: " << this->someIndex << " (" << x << ", " << y << ") ["
   //        << speedX << "," << speedY << "] " << this->radius << endl;
 }

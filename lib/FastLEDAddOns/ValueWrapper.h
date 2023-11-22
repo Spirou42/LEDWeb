@@ -69,11 +69,7 @@ public:
   virtual T getMaxValue() { return _maxVal; }
   virtual void setMaxValue(T newMax) { _maxVal = newMax; }
 
-  int16_t mapInto(FLSize source, FLSize target, int16_t input) {
-    float inp = (100.0 / (source.h - source.w)) * (input - source.w);
-    int16_t out = (target.h - target.w) * inp / 100.0 + target.w;
-    return out;
-  }
+ 
   friend Print &operator<<(Print &obj, ValueWrapper *v) {
     if (v) {
       obj << "[" << v->_name << "]{" << *(v->_value) << ", " << v->_minVal

@@ -24,7 +24,7 @@ void MetaBall::update() {
 
   y += speedY;
 
-  if (y < (radius - 1) || y >= (MATRIX_HEIGHT - radius)) {
+  if (y < (radius) || y >= (MATRIX_HEIGHT - radius)) {
     speedY = -speedY;
   }
 }

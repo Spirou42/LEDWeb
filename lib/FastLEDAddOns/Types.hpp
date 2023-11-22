@@ -113,6 +113,20 @@ typedef struct _FLSize {
     l.h = k * h;
     return l;
   }
+  /**
+   * @brief maps the init16_t input in the range of inputLimit the san of this
+   * size.
+   *
+   * @param input
+   * @param inputLimit
+   * @return int16_t
+   */
+  int16_t mapTo(int16_t input, _FLSize inputLimit = _FLSize(0, 255)) {
+    float inp =
+        (100.0 / (inputLimit.h - inputLimit.w)) * (input - inputLimit.w);
+    int16_t out = (this->h - this->w) * inp / 100.0 + this->w;
+    return out;
+  }
 } FLSize;
 
 typedef struct _FLRect {
@@ -130,6 +144,8 @@ typedef struct _FLRect {
   _FLRect(int16_t x, int16_t y, int16_t w, int16_t h)
       : origin(x, y), size(w, h){};
 } FLRect;
+
+int16_t mapInto(FLSize source, FLSize target, int16_t input);
 
 typedef enum _UIHint {
 

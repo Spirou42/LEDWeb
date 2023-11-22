@@ -3,7 +3,8 @@
 
 #include "EffectBase.h"
 #include <MetaBall.h>
-#include <list>
+#include <vector>
+typedef enum { moving, atTop, atBottom } blobState_t;
 
 class LavaBlob : public MetaBall {
 public:
@@ -13,6 +14,9 @@ public:
 
   virtual void update();
   // virtual void draw(XYMatrix &matrix);
+
+  blobState_t updatePosition();
+  float limitRadius();
 
   /**
    * @brief returns true if the this is touching the otherBlob
@@ -37,7 +41,7 @@ public:
 protected:
   int16_t numberOfBlobs;
   int16_t maxBlobSize;
-  std::list<LavaBlob *> lavaBlobs;
+  std::vector<LavaBlob *> lavaBlobs;
 
 private:
   void createLavaBlobs(int numOfBlobs);
