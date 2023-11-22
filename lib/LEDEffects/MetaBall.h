@@ -5,9 +5,9 @@
 #pragma once
 #include <FastLEDAddOns.h>
 
-class Metaball {
+class MetaBall {
 public:
-  Metaball(float initialX, float initialY, float initialSpeedX,
+  MetaBall(float initialX, float initialY, float initialSpeedX,
            float initialSpeedY, float initialSize, int16_t colorIndex);
 
   virtual void update();
@@ -18,6 +18,6 @@ protected:
   float y;
   float speedX;
   float speedY;
-  float size;
+  float radius;
   int16_t colorIndex;
 };

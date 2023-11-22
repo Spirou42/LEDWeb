@@ -17,10 +17,13 @@ public:
   EffectMetaBall() : Effect("Balls") {}
   virtual uint16_t frameRate();
   virtual void startEffect();
+  virtual void stopEffect();
   virtual void frame(unsigned long now);
 
 protected:
-  std::list<Metaball *> metaballs;
+  std::list<MetaBall *> metaballs;
   void updateMetaball(int16_t i);
   void drawMetaball(int16_t i);
+  void createMetaBalls();
+  void deleteMetaBalls();
 };

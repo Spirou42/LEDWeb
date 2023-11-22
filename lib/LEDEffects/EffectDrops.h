@@ -19,7 +19,7 @@ public:
 
   virtual void startEffect();
   virtual void stopEffect();
-  virtual uint16_t frameRate() { return 30; }
+  virtual uint16_t frameRate() { return 10; }
   virtual void frame(unsigned long now);
   virtual ValueWrapper *parameterAt(size_t idx);
   virtual String parameterNameAt(size_t idx);

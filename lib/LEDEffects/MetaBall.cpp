@@ -10,12 +10,12 @@
  */
 #include <EffectBase.h>
 #include <MetaBall.h>
-Metaball::Metaball(float initialX, float initialY, float initialSpeedX,
+MetaBall::MetaBall(float initialX, float initialY, float initialSpeedX,
                    float initialSpeedY, float initialSize, int16_t colorI)
     : x(initialX), y(initialY), speedX(initialSpeedX), speedY(initialSpeedY),
-      size(initialSize), colorIndex(colorI) {}
+      radius(initialSize), colorIndex(colorI) {}
 
-void Metaball::update() {
+void MetaBall::update() {
   x += speedX;
 
   if (x < 0 || x >= MATRIX_WIDTH) {
@@ -24,17 +24,17 @@ void Metaball::update() {
 
   y += speedY;
 
-  if (y < 0 || y >= MATRIX_HEIGHT) {
+  if (y < (radius - 1) || y >= (MATRIX_HEIGHT - radius)) {
     speedY = -speedY;
   }
 }
 
-void Metaball::draw(XYMatrix &matrix) {
+void MetaBall::draw(XYMatrix &matrix) {
   // Calculate bounding box
-  int minX = max(0, static_cast<int>(x - size));
-  int maxX = min(matrix.width() - 1, static_cast<int>(x + size));
-  int minY = max(0, static_cast<int>(y - size));
-  int maxY = min(matrix.height() - 1, static_cast<int>(y + size));
+  int minX = max(0, static_cast<int>(x - radius));
+  int maxX = min(matrix.width() - 1, static_cast<int>(x + radius));
+  int minY = max(0, static_cast<int>(y - radius));
+  int maxY = min(matrix.height() - 1, static_cast<int>(y + radius));
 
   for (int i = minX; i <= maxX; i++) {
     for (int j = minY; j <= maxY; j++) {
@@ -42,7 +42,7 @@ void Metaball::draw(XYMatrix &matrix) {
       float dy = y - j;
       float distanceSquared = dx * dx + dy * dy;
 
-      float radiusSquared = size * size;
+      float radiusSquared = radius * radius;
 
       if (distanceSquared < radiusSquared) {
         int brightness =

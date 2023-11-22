@@ -2,29 +2,46 @@
 #define __EFFECT_LAVA_H__
 
 #include "EffectBase.h"
-typedef struct _lavaBlob {
+#include <MetaBall.h>
+#include <list>
 
-} lavaBlob;
+class LavaBlob : public MetaBall {
+public:
+  LavaBlob(float x, float y, float speedX, float speedY, float radius,
+           int colorIndex)
+      : MetaBall(x, y, speedX, speedY, radius, colorIndex) {}
+
+  virtual void update();
+  // virtual void draw(XYMatrix &matrix);
+
+  /**
+   * @brief returns true if the this is touching the otherBlob
+   *
+   * @param otherBlob
+   * @return true
+   * @return false
+   */
+  bool isTouching(LavaBlob &otherBlob);
+
+  bool isMoving = false;
+  int someIndex;
+};
 
 class EffectLava : public Effect {
 public:
-  EffectLava() : Effect("Lava") {}
-  virtual uint16_t frameRate() { return 1000 / 60; }
+  EffectLava() : Effect("Lava Lamp") {}
+  virtual uint16_t frameRate() { return 30; }
   virtual void startEffect();
   virtual void frame(unsigned long now);
 
 protected:
-  void applyHeat();
-  void coolDown();
-  void mapHeatToBackground();
-  void displayTopHeat();
-  uint8_t add(uint8_t, uint8_t);
-  uint8_t sub(uint8_t, uint8_t);
-  uint8_t lavaDensity = 127;
-  uint8_t fluidDensity = 100;
-  uint8_t tempMap[MATRIX_WIDTH][MATRIX_HEIGHT];
-  uint8_t bottomHeat = 200;
-  uint8_t heatLosBase = 2;
+  int16_t numberOfBlobs;
+  int16_t maxBlobSize;
+  std::list<LavaBlob *> lavaBlobs;
+
+private:
+  void createLavaBlobs(int numOfBlobs);
+  void deleteLavaBlobs();
 };
 
 #endif

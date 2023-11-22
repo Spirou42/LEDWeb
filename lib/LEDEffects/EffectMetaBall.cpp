@@ -11,15 +11,32 @@ void EffectMetaBall::startEffect() {
   // Initialize metaballs
   metaballs.clear();
   if (metaballs.empty()) {
-    for (int i = 0; i < NUM_OF_BALLS; i++) {
-      int16_t colorIndex = (i) * 255 / NUM_OF_BALLS;
-
-      Metaball *k = new Metaball(random(MATRIX_WIDTH), random(MATRIX_HEIGHT),
-                                 random(1, 10) / 40.0, random(1, 10) / 40.0,
-                                 random(1, 3), colorIndex);
-      metaballs.push_back(k);
-    }
+    createMetaBalls();
   }
+}
+
+void EffectMetaBall::stopEffect() {
+  Effect::stopEffect();
+  deleteMetaBalls();
+}
+
+void EffectMetaBall::createMetaBalls() {
+  for (int i = 0; i < NUM_OF_BALLS; i++) {
+    int16_t colorIndex = (i) * 255 / NUM_OF_BALLS;
+
+    MetaBall *k = new MetaBall(random(MATRIX_WIDTH), random(MATRIX_HEIGHT),
+                               random(1, 10) / 40.0, random(1, 10) / 40.0,
+                               random(1, 3), colorIndex);
+    metaballs.push_back(k);
+  }
+}
+
+void EffectMetaBall::deleteMetaBalls() {
+  for (auto it = metaballs.begin(); it != metaballs.end(); ++it) {
+    MetaBall *t = *it;
+    delete t;
+  }
+  metaballs.clear();
 }
 uint16_t EffectMetaBall::frameRate() { return 10; }
 

@@ -142,7 +142,6 @@ void setup() {
   LED.startBlink(CRGB::DarkRed, STATUS_FREQUENCE);
 
   // put your setup code here, to run once:
-  Serial << "Neue Version" << endl;
   delay(200);
 
   if (!SetupWiFi()) {

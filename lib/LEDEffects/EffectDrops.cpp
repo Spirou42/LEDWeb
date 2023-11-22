@@ -24,9 +24,10 @@ void EffectDrops::startEffect() {
   ledMatrix.fill(CRGB::Blue);
   damping = 25;
 
-  dropTime = 350;
-  dropStrength = 850;
+  dropTime = 850;
+  dropStrength = 450;
   modeMask = 1;
+  blendFactor = 10;
   globalHueStep = 2;
   globalHueFrameDelay = 15;
   if (_parameters.empty()) {
@@ -55,7 +56,7 @@ void EffectDrops::startEffect() {
   b1[ledMatrix.XY(8, 8)] = 1000;
   //  _initPalette = Palette.currentValue();
   //  Palette.initTo(8);
-  blendFactor = 128;
+
   //  Serial << "Water started" << endl;
 }
 
@@ -74,7 +75,7 @@ void EffectDrops::frame(unsigned long now) {
       if (mode & 0x02) {
         uint8_t l = k & 0xff;
         c = rgb2hsv(ColorFromPalette((*currentSystemPalette)->second.palette,
-                                     l + globalHue));
+                                     l /*+ globalHue*/));
       } else {
         c.value = 127;
         if (k > 0) {
