@@ -64,9 +64,9 @@ function onWSError(event){
     console.log("some Error:"+event)
 }
 
-function setupWSClient() {
+function setupWSClient(hostname) {
     console.log("Setup WSClient");
-    wSocket = new WebSocket("ws://esp32rgb.local/ws");
+    wSocket = new WebSocket("ws://"+hostname+".local/ws");
     wSocket.onopen=onWSConnect;
     wSocket.onerror=onWSError;
 }

@@ -259,6 +259,6 @@ CHSV rgb2hsv(const CRGB &rgb) {
   result.s = (uint8_t)S;
   result.v = (uint8_t)V;
   //		Serial <<"rH:"<<result.h<<" rS:"<<result.s<<"
-  //rV:"<<result.v<<endl;
+  // rV:"<<result.v<<endl;
   return result;
 }

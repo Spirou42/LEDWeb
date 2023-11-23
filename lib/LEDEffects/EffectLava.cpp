@@ -6,7 +6,7 @@ EffectLava
 
 void EffectLava::startEffect() {
   Effect::startEffect();
-  blendFactor = 10;
+  blendFactor = 128;
   globalHueStep = 0;
   numberOfBlobs = 15;
   maxBlobSize = 2;
@@ -22,7 +22,7 @@ void EffectLava::startEffect() {
 
 void EffectLava::createLavaBlobs(int nob) {
   float speedX = 0;
-  float speedY = 0.015;
+  float speedY = 0.05;
 
   for (int i = 0; i < nob; i++) {
 
