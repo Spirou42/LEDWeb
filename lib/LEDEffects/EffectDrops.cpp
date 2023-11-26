@@ -26,7 +26,7 @@ void EffectDrops::startEffect() {
 
   dropTime = 850;
   dropStrength = 450;
-  modeMask = 1;
+  modeMask = 0;
   blendFactor = 10;
   globalHueStep = 2;
   globalHueFrameDelay = 15;

@@ -29,7 +29,7 @@ void EffectLava::createLavaBlobs(int nob) {
     float radius = random(10, maxBlobSize * 10) / 10.0;
     float x = random(0, MATRIX_WIDTH);
     float y = radius;
-    LavaBlob *k = new LavaBlob(x, y, speedX, speedY, radius, 170);
+    LavaBlob *k = new LavaBlob(x, y, speedX, speedY, radius, random(1, 255));
     k->someIndex = i;
     lavaBlobs.push_back(k);
   }

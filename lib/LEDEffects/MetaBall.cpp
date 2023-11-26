@@ -51,12 +51,13 @@ void MetaBall::draw(XYMatrix &matrix) {
                                        colorIndex, brightness, LINEARBLEND);
 
         CRGB dest = matrix.getPixel(i, j);
+        CRGB newColor;
         if (dest == CRGB::Black) {
-          dest = source;
+          newColor = source;
         } else {
-          nblend(dest, source, 128);
+          newColor = blend(dest, source, 128);
         }
-        matrix.setPixel(i, j, dest);
+        matrix.setPixel(i, j, newColor);
       }
     }
   }
